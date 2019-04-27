@@ -1,0 +1,12 @@
+#list {
+    margin: auto;
+}
+
+#list li {
+    padding: 8px;
+    border: 2px solid black;
+    margin: 5px 0;
+    display: block;
+    cursor: pointer;
+    max-width: 300px;
+}
