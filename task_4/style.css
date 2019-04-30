@@ -20,21 +20,21 @@ body, html {
 }
 
 .btn-up {
-    top: 0 !important;
-    transition: 2s;
+    transform: translateY(-230px);
+    transition: 2s !important;
 }
 
 .btn-down {
-    bottom: 0 !important;
-    transition: 2s ;
+    transform: translateY(230px);
+    transition: 2s !important;
 }
 
 .btn-left {
-    left: 0 !important;
+    transform: translateX(-450px);
     transition: 2s;
 }
 
 .btn-right {
-    right: 0 !important;
+    transform: translateX(450px);
     transition: 2s;
 }
