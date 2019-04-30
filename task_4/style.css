@@ -11,9 +11,30 @@ body, html {
     width: 200px;
     height: 200px;
     border: 2px solid black;
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    right: 50%;
+    bottom: 50%;
     background: #e59c0e;
+}
+
+.btn-up {
+    top: 0 !important;
+    transition: 2s;
+}
+
+.btn-down {
+    bottom: 0 !important;
+    transition: 2s;
+}
+
+.btn-left {
+    left: 0 !important;
+    transition: 2s;
+}
+
+.btn-right {
+    right: 0 !important;
+    transition: 2s;
 }
