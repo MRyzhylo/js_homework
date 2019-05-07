@@ -1,0 +1,16 @@
+#main_block {
+    border: 1px solid black;
+    max-width: 200px;
+    max-height: 200px;
+    background: burlywood;
+    margin: 5px;
+}
+
+#second_block {
+    border: 1px solid black;
+    max-width: 200px;
+    max-height: 200px;
+    background: burlywood;
+    margin: 5px;
+}
+
