@@ -1,0 +1,53 @@
+
+#main_block {
+    max-width: 200px;
+    max-height: 200px;
+    background: lightgreen;
+    border: 1px solid black;
+}
+
+#main_block input {
+display: block;
+margin: 2px;
+}
+
+#second_block {
+    max-width: 200px;
+    max-height: 200px;
+    background: lightgreen;
+    border: 1px solid black;
+}
+
+#second_block input {
+display: block;
+margin: 2px;
+}
+
+#third_block {
+    max-width: 200px;
+    max-height: 200px;
+    background: lightgreen;
+    border: 1px solid black;
+}
+
+
+#third_block input {
+    display: block;
+    margin: 2px;    
+}
+
+#final_block {
+    max-width: 200px;
+    max-height: 300px;
+    background: lightgreen;
+    border: 1px solid black;
+}
+
+#final_block p {
+    display: block;
+    margin: 2px 5px;
+}
+
+#final_block button {
+    margin: 2px;
+}
