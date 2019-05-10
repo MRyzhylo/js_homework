@@ -1,4 +1,4 @@
-
+'use strict'
 
 var arr = ['Kate', 'Bill', 'Alex', 'John', 'Pit', 'Ann',]
 
@@ -8,14 +8,14 @@ function UserManager(data, nameId) {
     this.block.className = 'wrap_block';
     this.name = document.createElement('input');
     this.name.className = 'input_block';
-    this.name.type = 'text'
-    this.name.placeholder = 'Enter name'
+    this.name.type = 'text';
+    this.name.placeholder = 'Enter name';
     this.btnFind = document.createElement('button');
-    this.btnFind.className = 'btn'
+    this.btnFind.className = 'btn';
     this.btnFind.innerHTML = 'Find User';
     this.btnList = document.createElement('button');
     this.btnList.className = 'btn';
-    this.btnList.innerHTML = 'List Users'
+    this.btnList.innerHTML = 'List Users';
     this.btnClear = document.createElement('button');
     this.btnClear.className = 'btn';
     this.btnClear.innerHTML = 'Clear';
@@ -26,41 +26,40 @@ function UserManager(data, nameId) {
     this.container.appendChild(this.block);
 
     this.data = data;
-    this.checkName = this.data.includes(this.name.value);
-
-    function findUser() {
+    
+    this.findUser = function () {
         if (!this.name.value) {
+            alert('Please enter name!')
             return
         }
-
-        if (this.checkName) {
-            this.block.innerHTML = `Имя ${this.name.value} уже существует!`;
+        var checkName = this.data.includes(this.name.value);
+        if (checkName) {
+            this.block.innerHTML = ` "Имя ${this.name.value} уже существует!" `;
         } else {
             this.data.push(this.name.value);
-            this.block.innerHTML = `${this.name.value} было добавлено с список!`;
+            this.block.innerHTML = ` "${this.name.value} было добавлено с список!" `;
         }
-
         this.name.value = null;
     }.bind(this)
 
-    function listUser() {
+    this.listUser = function () {
         this.block.innerHTML = '';
         for (var inn of data) {
-            this.p = document.createElement('p');
-            this.p.innerHTML = inn;
-            this.block.appendChild(this.p);
+            this.li = document.createElement('li');
+            this.li.innerHTML = inn;
+            this.block.appendChild(this.li);
         }
     }.bind(this)
 
-    function clearBlock() {
+    this.clearBlock = function () {
         this.block.innerHTML = '';
     }.bind(this)
 
-    function init() {
-        this.btnFind.onclick = findUser;
-        this.btnList.onclick = listUser;
-        this.btnClear.onclick = clearBlock;
+    this.init = function () {
+        this.btnFind.onclick = this.findUser;
+        this.btnList.onclick = this.listUser;
+        this.btnClear.onclick = this.clearBlock;
     }.bind(this)
-    init();
+    this.init();
 }
 new UserManager(arr, 'container');

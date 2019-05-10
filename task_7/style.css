@@ -1,6 +1,5 @@
 #container {
     max-width: 400px;
-    max-height: 500px;
     background: moccasin;
     border: 1px solid black;
 }
@@ -12,4 +11,9 @@
 .btn {
     margin: 5px 2px;
     cursor: pointer;
+}
+
+.wrap_block li {
+    margin: 0 5px;
+    padding: 2px 0;
 }
