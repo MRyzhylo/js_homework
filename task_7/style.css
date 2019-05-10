@@ -1,0 +1,15 @@
+#container {
+    max-width: 400px;
+    max-height: 500px;
+    background: moccasin;
+    border: 1px solid black;
+}
+
+.input_block {
+    margin: 5px 2px;
+}
+
+.btn {
+    margin: 5px 2px;
+    cursor: pointer;
+}
