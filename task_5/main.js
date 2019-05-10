@@ -2,34 +2,36 @@
 
 var arr = ['Kyiv', 'Kharkiv', 'Dnipro', 'Odessa', 'Poltava', 'Lviv'];
 
-function whatEver() {
+function WhatEver(data, nameId1, nameId2) {
+    this.box = document.getElementById(nameId1);
+    this.secondBox = document.getElementById(nameId2);
+    this.ul = document.createElement('ul');
+    this.ul1 = document.createElement('ul');
+    this.box.appendChild(this.ul);
+    this.secondBox.appendChild(this.ul1);
+    this.data = data;
 
-    var box = document.getElementById('main_block');
-    var secondBox = document.getElementById('second_block');
-    var ul = document.createElement('ul');
-    var ul1 = document.createElement('ul');
-    box.appendChild(ul);
-    secondBox.appendChild(ul1);
+    this.renderList = function () {
+        for (var name of data) {
+            this.li = document.createElement('li');
+            this.ul.appendChild(this.li);
+            this.li.innerHTML = name;
+            this.button = document.createElement('button');
+            this.button.innerHTML = 'x';
+            this.li.appendChild(this.button);
+            this.button.onclick = this.elemReplace;
+        }
+    }.bind(this) 
+    this.renderList();
 
-    for (var name of arr) {
-        var li = document.createElement('li');
-        ul.appendChild(li);
-        li.innerHTML = name;
-        var button = document.createElement('button');
-        button.innerHTML = 'x';
-        li.appendChild(button);
-        button.onclick = elemReplace;    
-    }
-    
-    function elemReplace() {
+    this.elemReplace = function () {
         if (this.li === this.name) {
             ul1.appendChild(this.li);
         }
         if (this.li !== this.name) {
             ul.appendChild(li);
         }
-    }
-
+    }.bind(this)
 }
 
-whatEver();
+new WhatEver (arr, 'main_block', 'second_block')
