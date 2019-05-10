@@ -2,6 +2,7 @@
 
 var arr = [];
 
+function formList () {
 function firstForm () {
     var container = document.getElementById('container');
     var firstDiv = document.createElement('div');
@@ -83,26 +84,5 @@ function finalForm () {
     finalDiv.appendChild(button);
     button.onclick = sendData;
 }
-
-console.log(arr);
-
-
-
-// function showInput () {
-//     function firstForm () {
-//         this.body = document.getElementsByTagName('body');
-//         this.firstDiv = document.createElement('div');
-//         this.firstDiv.id = 'main_block';
-//         this.firstInput = document.createElement('input');
-//         this.secondInput = document.createElement('input');
-//         this.firstInput.type = Text;
-//         this.secondInput.type = Text;
-//         this.button = document.createElement('button');
-//         this.firstDiv.appenChild(this.firstInput);
-//         this.firstDiv.appenChild(this.secondInput);
-//         this.firstDiv.appenChild(this.secondInput);
-//         this.body.appenChild(this.firstDiv);
-//     }
-//     firstForm();
-// }
-
+}
+formList();
