@@ -1,4 +1,4 @@
-#main_block {
+#main_block, #second_block {
     border: 1px solid black;
     max-width: 200px;
     max-height: 200px;
@@ -6,11 +6,10 @@
     margin: 5px;
 }
 
-#second_block {
-    border: 1px solid black;
-    max-width: 200px;
-    max-height: 200px;
-    background: burlywood;
-    margin: 5px;
+#main_block ul li, #second_block ul li {
+    margin-top: 5px;
 }
 
+#main_block ul li button, #second_block ul li button {
+    margin-left: 5px;
+}

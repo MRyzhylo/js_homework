@@ -11,27 +11,30 @@ function WhatEver(data, nameId1, nameId2) {
     this.secondBox.appendChild(this.ul1);
     this.data = data;
 
-    this.renderList = function () {
-        for (var name of data) {
-            this.li = document.createElement('li');
-            this.ul.appendChild(this.li);
-            this.li.innerHTML = name;
-            this.button = document.createElement('button');
-            this.button.innerHTML = 'x';
-            this.li.appendChild(this.button);
-            this.button.onclick = this.elemReplace;
-        }
-    }.bind(this) 
-    this.renderList();
+    for (var name of data) {
+        this.li = document.createElement('li');
+        this.ul.appendChild(this.li);
+        this.li.innerHTML = name;
+        this.button = document.createElement('button');
+        this.button.className = 'remove_button';
+        this.button.innerHTML = 'x';
+        this.li.appendChild(this.button);
+    }
 
-    this.elemReplace = function () {
-        if (this.li === this.name) {
-            ul1.appendChild(this.li);
-        }
-        if (this.li !== this.name) {
-            ul.appendChild(li);
-        }
+    this.moveName = function (event) {
+        if (!event.target.classList.contains('remove_button')) return;
+        this.ul1.appendChild(event.target.parentNode)
     }.bind(this)
+
+    this.ul.onclick = this.moveName;
+
+    this.moveHome = function (event) {
+        if (!event.target.classList.contains('remove_button')) return;
+        this.ul.appendChild(event.target.parentNode)
+    }.bind(this)
+
+    this.ul1.onclick = this.moveHome;
 }
 
-new WhatEver (arr, 'main_block', 'second_block')
+
+new WhatEver(arr, 'main_block', 'second_block');
